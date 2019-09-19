@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
 
 namespace NeverOffline
@@ -36,7 +33,7 @@ namespace NeverOffline
 
         static void Suiji()
         {
-            var ret = anjianJiange.Next(1, 5);
+            var ret = anjianJiange.Next(1, 7);
             switch (ret)
             {
                 case 1:
@@ -54,7 +51,39 @@ namespace NeverOffline
                 case 5:
                     Zhuangbei();
                     break;
+                case 6:
+                    Zuozou();
+                    break;
+                case 7:
+                    Youzou();
+                    break;
             }
+        }
+
+        /// <summary>
+        /// 左
+        /// </summary>
+        static void Zuozou()
+        {
+            int qian = qianhouJiange.Next(200, 500);
+            //A键
+            Keys.keybd_event(Keys.vbKeyA, 0, 0, 0);
+            Thread.Sleep(qian);
+            Keys.keybd_event(Keys.vbKeyA, 0, 2, 0);
+            Thread.Sleep(tingzhiJiange.Next(100, 900));
+        }
+
+        /// <summary>
+        /// 右
+        /// </summary>
+        static void Youzou()
+        {
+            int qian = qianhouJiange.Next(200, 500);
+            //D键
+            Keys.keybd_event(Keys.vbKeyD, 0, 0, 0);
+            Thread.Sleep(qian);
+            Keys.keybd_event(Keys.vbKeyD, 0, 2, 0);
+            Thread.Sleep(tingzhiJiange.Next(100, 900));
         }
 
         /// <summary>

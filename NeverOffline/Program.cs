@@ -33,7 +33,7 @@ namespace NeverOffline
 
         static void Suiji()
         {
-            var ret = anjianJiange.Next(1, 7);
+            var ret = anjianJiange.Next(1, 9);
             switch (ret)
             {
                 case 1:
@@ -57,7 +57,39 @@ namespace NeverOffline
                 case 7:
                     Youzou();
                     break;
+                case 8:
+                    Shengwang();
+                    break;
+                case 9:
+                    Renwu();
+                    break;
             }
+        }
+
+        /// <summary>
+        /// K
+        /// </summary>
+        static void Shengwang()
+        {
+            int qian = qianhouJiange.Next(200, 500);
+            //A键
+            Keys.keybd_event(Keys.vbKeyK, 0, 0, 0);
+            Thread.Sleep(qian);
+            Keys.keybd_event(Keys.vbKeyK, 0, 2, 0);
+            Thread.Sleep(tingzhiJiange.Next(100, 900));
+        }
+
+        /// <summary>
+        /// L
+        /// </summary>
+        static void Renwu()
+        {
+            int qian = qianhouJiange.Next(200, 500);
+            //A键
+            Keys.keybd_event(Keys.vbKeyL, 0, 0, 0);
+            Thread.Sleep(qian);
+            Keys.keybd_event(Keys.vbKeyL, 0, 2, 0);
+            Thread.Sleep(tingzhiJiange.Next(100, 900));
         }
 
         /// <summary>

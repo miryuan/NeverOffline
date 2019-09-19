@@ -77,9 +77,9 @@ namespace NeverOffline
         {
             int hou = qianhouJiange.Next(200, 500);
             //后退一步
-            Keys.keybd_event(Keys.vbKeyD, 0, 0, 0);
+            Keys.keybd_event(Keys.vbKeyS, 0, 0, 0);
             Thread.Sleep(hou);
-            Keys.keybd_event(Keys.vbKeyD, 0, 2, 0);
+            Keys.keybd_event(Keys.vbKeyS, 0, 2, 0);
         }
 
         /// <summary>
